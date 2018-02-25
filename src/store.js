@@ -25,6 +25,19 @@ export default new Vuex.Store({
     }
   },
   actions: {
-
+  },
+  getters: {
+    getBacklogs: state => {
+      return state.backlog
+    },
+    getTodos: state => {
+      return state.todo
+    },
+    getDoing: state => {
+      return state.doing
+    },
+    getDone: state => {
+      return state.done
+    }
   }
 })
