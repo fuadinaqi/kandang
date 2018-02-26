@@ -9,9 +9,9 @@
         </header>
         <div class="card-content">
           <div class="content">
-            POINT : {{ backlog.point }}
+            <p class="button is-info is-rounded">POINT : {{ backlog.point }}</p>
             <br>
-            ASSIGN TO : {{ backlog.assign }}
+            <p class="button is-success is-rounded">ASSIGN TO : {{ backlog.assign }}</p>
           </div>
         </div>
         <footer class="card-footer">
@@ -51,4 +51,10 @@ export default {
 </script>
 
 <style scoped>
+header {
+  background-color: red;
+}
+p {
+  color: white;
+}
 </style>

@@ -1,23 +1,26 @@
 <template>
   <div class="doing">
-    <div v-for="(doing, i) in dataDoing" :key="i" class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          {{ doing.title }}
-        </p>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          POINT : {{ doing.point }}
-          <br>
-          ASSIGN TO : {{ doing.assign }}
+    <div v-for="(doing, i) in dataDoing" :key="i">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            {{ doing.title }}
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p class="button is-info is-rounded">POINT : {{ doing.point }}</p>
+            <br>
+            <p class="button is-success is-rounded">ASSIGN TO : {{ doing.assign }}</p>
+          </div>
         </div>
+        <footer class="card-footer">
+          <a @click="previewKanban(doing, i)" class="card-footer-item">Prev</a>
+          <a @click="deleteKanban(i)" class="card-footer-item">Delete</a>
+          <a @click="nextKanban(doing, i)" class="card-footer-item">Next</a>
+        </footer>
       </div>
-      <footer class="card-footer">
-        <a @click="previewKanban(doing, i)" class="card-footer-item">Prev</a>
-        <a @click="deleteKanban(i)" class="card-footer-item">Delete</a>
-        <a @click="nextKanban(doing, i)" class="card-footer-item">Next</a>
-      </footer>
+      <br>
     </div>
   </div>
 </template>
@@ -53,4 +56,10 @@ export default {
 </script>
 
 <style scoped>
+header {
+  background-color: green;
+}
+p {
+  color: white;
+}
 </style>
